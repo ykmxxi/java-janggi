@@ -55,10 +55,4 @@ public class Soldier extends Piece {
         return !board.isExists(position) || !board.isSameTeamPosition(this.team, position);
     }
 
-    private boolean sameUnmovableDirectionMovePositions(final Position startPosition, final Position candiatePosition) {
-        return getUnmovableDirections().stream()
-                .map(startPosition::moveByDirection)
-                .anyMatch(unmovableDirectionPosition -> unmovableDirectionPosition.equals(candiatePosition));
-    }
-
 }
